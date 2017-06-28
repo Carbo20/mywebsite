@@ -64,7 +64,6 @@ export class SkillsComponent implements OnInit {
 
   skills: Skill[];
   
-  skillHoverState = 'normal'
   skillPage = SkillType.langages;
   nextButtonDisabled = false;
   previousButtonDisabled = true;
@@ -78,16 +77,6 @@ export class SkillsComponent implements OnInit {
 
   onSkillClick(skill){
     this.skills[this.skills.indexOf(skill)].showDetail = !this.skills[this.skills.indexOf(skill)].showDetail;
-  }
-
-
-  onHover(){
-      this.skillHoverState = 'hover';
-      console.log("hover");
-  }
-
-  onOut(){
-      this.skillHoverState = 'normal';
   }
 
   onSkillsChange(pageTurn: number){

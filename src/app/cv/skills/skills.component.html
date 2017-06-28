@@ -10,12 +10,11 @@
     style="width: 300px;" 
     *ngFor="let skill of skills; let i of index"
     (click)="onSkillClick(skill)"
-    (mouseover)="onHover()"
-    (mouseout)="onOut()">
+    highlightSkill>
       <i  class="fa fa-cog fa-spin" ></i>
         <b id="noteName">{{skill.name}}</b>
         <i>
-          <i *ngIf="skill.type == 0 || skill.type == 1">
+          <i *ngIf="skill.type == 0 || skill.type == 1"  >
             <i *ngFor="let number of [0,1,2,3,4]; let i = index" class="fa note" [notationFont] = "skill.note" [index] = "i"></i>
           </i>
         </i>

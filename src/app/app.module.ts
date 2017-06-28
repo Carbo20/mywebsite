@@ -10,10 +10,12 @@ import { HttpModule } from '@angular/http';
 import { HeaderComponent } from './header/header.component';
 import { SkillsComponent } from './cv/skills/skills.component';
 import { NotationFontDirective } from './cv/skills/skills.directive';
+import { HighlightDirective } from './cv/skills/skills.directive';
 import { ExperiencesComponent } from './cv/experiences/experiences.component';
 import { CvComponent } from './cv/cv.component';
 import { MeComponent } from './me/me.component';
 import { ContactComponent } from './contact/contact.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -21,10 +23,12 @@ import { ContactComponent } from './contact/contact.component';
     HeaderComponent,
     SkillsComponent,
     NotationFontDirective,
+    HighlightDirective,
     ExperiencesComponent,
     CvComponent,
     MeComponent,
-    ContactComponent
+    ContactComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
