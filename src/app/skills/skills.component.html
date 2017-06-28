@@ -1,0 +1,26 @@
+<div align="center"> <h3 style="font-size:30px"> Skills </h3>
+    <li
+    class="list-group-item box"
+    [@animateList]
+    [@hoverState] = "skillHoverState"
+    style="width: 300px;" 
+    *ngFor="let skill of skills; let i of index"
+    (click)="onSkillClick(skill)"
+    (mouseover)="onHover()"
+    (mouseout)="onOut()">
+      <i  class="fa fa-cog fa-spin" ></i>
+        <b id="noteName">{{skill.name}}</b>
+        <i>
+          <i *ngFor="let number of [0,1,2,3,4]; let i = index" class="fa note" [notationFont] = "skill.note" [index] = "i"></i>
+        </i>
+      <div *ngIf="skill.detail !=  '' &&  skill.showDetail">
+        {{skill.detail}}
+      </div>
+    </li>
+    <div class="row">
+      <div class="col-md-5"></div>
+      <button class="btn btn-primary col-md-1" (click)="onSkillsChange(-1)" [disabled]="previousButtonDisabled">Previous Skills</button>
+      <button class="btn btn-primary col-md-1" (click)="onSkillsChange(1)" [disabled]="nextButtonDisabled">Next Skills</button>
+      <div class="col-md-5"></div>
+    </div>
+</div>
