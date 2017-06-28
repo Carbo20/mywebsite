@@ -68,6 +68,7 @@ export class SkillsComponent implements OnInit {
   skillPage = SkillType.langages;
   nextButtonDisabled = false;
   previousButtonDisabled = true;
+  skillType = "Langages"
 
   constructor(private skillsService: SkillsService) { }
 
@@ -118,6 +119,7 @@ export class SkillsComponent implements OnInit {
     var j = 0;
     var tempSkills: Skill[];
     tempSkills = this.skillsService.getSkills(this.skillPage);
+    this.changeSkillType();
     for(var i: number =0;i<tempSkills.length;i++){
      setTimeout(()=>{
       this.skills.push(tempSkills[j]);
@@ -125,6 +127,13 @@ export class SkillsComponent implements OnInit {
      },i*200); 
     }
 
+  }
+
+  changeSkillType(){
+    if(this.skillPage == SkillType.langages) this.skillType = "Langages"
+    else if(this.skillPage == SkillType.fieldOfStudy) this.skillType = "Field of Studies"
+    else if(this.skillPage == SkillType.framework) this.skillType = "Frameworks"
+    else if(this.skillPage == SkillType.miscellaneous) this.skillType = "Miscellaneous"
   }
 
 }
